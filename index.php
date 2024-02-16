@@ -1,47 +1,86 @@
 <?php
-//Arithematic Operator
-
-print 'Arithematic Operator'.'<br>';
-$num1=8;
-$num2=9;
-
-echo $num1+$num2 .'<br>';
-echo $num1-$num2 .'<br>';
-echo $num1*$num2 .'<br>';
-echo $num1/$num2 .'<br>';
+// Conditional Statement
 
 
-//Relational Operator
+// Else-IF 
 
-print 'Relational Operator'.'<br>';
+$per=78;
+if($per >= 80 && $per<=100){
+    echo 'Your Grade is A-one';
+}
+elseif($per >= 70 && $per<=79.99){
+    echo 'Your Grade is A';
+}
+elseif($per >= 60 && $per<=69.99){
+    echo 'Your Grade is B';
+}
+elseif($per >= 50 && $per<=59.99){
+    echo 'Your Grade is C';
+}
+elseif($per >= 40 && $per<=49.99){
+    echo 'Your Grade is D';
+}
+elseif($per < 40){
+    echo 'Your Grade is Fail';
+}
+else{
+    echo 'Your Percantage is Wrong';
+}
 
-$num3=9;
-$num4=8;
-
-echo $num3==$num4;
 echo '<br>';
 
-echo $num3!=$num4;
+// Nested IF 
+
+$User='Admin';
+$pass='Admin123';
+if($User!=''&& $pass!=''){
+    if($User=='Admin' || $User=='admin'&& $pass=='Admin123' || $pass=='admin123'){
+        echo 'Login Successfully';
+    }
+    else{
+        echo 'Invalid Credential';
+    }
+
+}
+else{
+    echo 'Username And Password is Required';
+}
 echo '<br>';
 
-echo $num3===$num4;
-echo '<br>';
+// Switch 
 
-echo $num3<$num4;
-echo '<br>';
+$day=7;
+switch($day){
+    case 1:
+        echo 'Monday';
+     break;
 
-echo $num3>$num4;
-echo '<br>';
+    case 2:
+        echo 'Tuesday';
+    break;
 
+    case 3:
+        echo 'Wednesday';
+    break;
 
-//Logical Opeartor
+    case 4:
+        echo 'Thursday';
+    break;
 
-print 'Logical Operator'.'<br>';
+    case 5:
+        echo 'Friday';
+    break;
 
-$name='Usama';
-$email='Ali123';
+    case 6:
+        echo 'Satuarday';
+        break;
 
-print $name=='Ali' || $name=='Usama' && $email=='Ali123';
+    case 7:
+        echo 'Sunday';
+    break;
+    default:
+        echo 'Enter  only between 1-7 Number';
+    break;
+}
 
 ?>
-
