@@ -6,7 +6,17 @@ include 'confiq.php'
 ?>
 <?php
 if(isset($_POST['sumit'])){
-    $name = $_POST['name'];
+if(empty($_POST['name'])){
+  echo "<script>alert('Fill All Field')</script>";
+}
+elseif(empty($_POST['email'])){
+  echo "<script>alert('Fill All Field')</script>";
+}
+elseif(empty($_POST['city'])){
+  echo "<script>alert('Fill All Field')</script>";
+}
+else{
+  $name = $_POST['name'];
     $email = $_POST['email'];
     $city = $_POST['city'];
     $query= "insert into `Student` (`name`,`email`,`city`) values ('$name','$email','$city')";
@@ -19,6 +29,7 @@ if(isset($_POST['sumit'])){
         echo "<script>alert('falied')</script>";
 
     }
+}
 }
 ?>
 <!DOCTYPE html>
