@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <table>
+                <table class="table text-white">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -34,7 +34,7 @@
                             <th><?php echo $data['email'];?></th>
                             <th><?php echo $data['city'];?></th>
                             <th>
-                                <a href="shoe.php">Edit</a>
+                                <a href="update.php?id=<?php echo $data['id'];?>">Edit</a>
                                 <a href="delete.php?id=<?php echo $data['id'];?>">Delete</a>
                         </th>
                         </tr>
