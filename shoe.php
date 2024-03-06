@@ -14,11 +14,12 @@
                 <table class="table text-white">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>City</th>
-                            <th>Action</th>
+                            <th style="color: white;">ID</th>
+                            <th style="color: white;">Name</th>
+                            <th style="color: white;">Email</th>
+                            <th style="color: white;">City</th>
+                            <th style="color: white;">Image</th>
+                            <th style="color: white;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,11 +30,12 @@
                         while($data=mysqli_fetch_assoc($result)){
                         ?>
                         <tr>
-                            <th><?php echo $data['id'];?></th>
-                            <th><?php echo $data['name'];?></th>
-                            <th><?php echo $data['email'];?></th>
-                            <th><?php echo $data['city'];?></th>
-                            <th>
+                            <th style="color: white;"><?php echo $data['id'];?></th>
+                            <th style="color: white;"><?php echo $data['name'];?></th>
+                            <th style="color: white;"><?php echo $data['email'];?></th>
+                            <th style="color: white;"><?php echo $data['city'];?></th>
+                        <th><img src="upload/<?php echo $data['image'];?>" alt="" height="100px" width="150px" style="border-radius: 10px; object-fit: cover;"></th>
+                            <th style="color: white;">
                                 <a href="update.php?id=<?php echo $data['id'];?>">Edit</a>
                                 <a href="delete.php?id=<?php echo $data['id'];?>">Delete</a>
                         </th>

@@ -17,11 +17,16 @@ elseif(empty($_POST['email'])){
 elseif(empty($_POST['city'])){
   echo "<script>alert('Fill All Field')</script>";
 }
+
 else{
   $name = $_POST['name'];
     $email = $_POST['email'];
     $city = $_POST['city'];
-    $query= "update `Student` set `name`='$name', `email`='$email', `city`='$city' where id='$id' ";
+    $img = $_FILES['image']['name'];
+    $temname= $_FILES['image']['tmp_name'];
+    $upload= "upload/" .$img;
+    move_uploaded_file($temname,$upload);
+    $query= "update `Student` set `name`='$name', `email`='$email', `city`='$city' , `image`='$img' where id='$id' ";
     $result=mysqli_query($con,$query);
 
     if($result){
@@ -52,7 +57,7 @@ else{
             <div class="col-md-8">
             
             
-<form method="post">
+<form method="post" enctype="multipart/form-data">
   <fieldset>
     <div class="form-group row">
       <div class="col-sm-10">
@@ -69,6 +74,10 @@ else{
     <div class="form-group">
       <label for="exampleInputEmail1" class="form-label mt-4"> City</label>
       <input type="text"  name="city" class="form-control"  value="<?php echo $row['city']?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter City">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="form-label mt-4"> Image</label>
+      <input type="file"  name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <button type="submit" class="btn btn-primary m-3" name="sumit">Submit</button>
   </fieldset>
